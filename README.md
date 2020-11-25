@@ -1,4 +1,4 @@
 
-Public scripts that ive made myself/with friends.\n
-Enjoy!\n
+Public scripts that ive made myself/with friends.\r
+Enjoy!\r
 (v3rm posts)
