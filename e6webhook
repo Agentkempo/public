@@ -1,0 +1,22 @@
+local table = syn.request({Url = "https://e621.net/posts.json?limit=600&tags=gay+femboy", Method="GET"}).Body
+local webhook = "https://discordapp.com/api/webhooks"
+table = game.HttpService:JSONDecode(table)
+print(table,"table")
+print(table["posts"],"posts")
+print(#table["posts"], "amount")
+for i = 1,#table["posts"] do
+    wait(3)
+    a=table["posts"][i]["file"]
+    local tble = {
+       ["content"]=a.url
+    }
+    syn.request({
+        Url = webhook;
+        Method = "POST";
+        Headers = {
+            ["content-type"]="application/json"
+        };
+        Body = game:GetService("HttpService"):JSONEncode(tble)
+    })
+    print(table["posts"][i]["file"].url)
+end
